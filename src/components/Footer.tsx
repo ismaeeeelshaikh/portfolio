@@ -1,4 +1,5 @@
-import { Mail, Phone, Link, Code2 } from "lucide-react";
+import { Mail, Phone } from "lucide-react";
+import { FaLinkedin, FaGithub } from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -47,17 +48,17 @@ export default function Footer() {
               href="https://linkedin.com/in/ismaeel-shaikh-imms"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
+              className="text-gray-400 hover:text-[#0A66C2] transition-colors p-2 hover:bg-[#0A66C2]/10 rounded-full flex items-center justify-center"
             >
-              <Link size={20} />
+              <FaLinkedin size={22} />
             </a>
             <a
               href="https://github.com/ismaeeeelshaikh"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/5 rounded-full"
+              className="text-gray-400 hover:text-white transition-colors p-2 hover:bg-white/10 rounded-full flex items-center justify-center"
             >
-              <Code2 size={20} />
+              <FaGithub size={22} />
             </a>
           </div>
         </div>

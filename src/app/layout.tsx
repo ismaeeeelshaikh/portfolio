@@ -58,6 +58,10 @@ export const metadata: Metadata = {
   },
 };
 
+import { Analytics } from "@vercel/analytics/react";
+import LoadingScreen from "@/components/LoadingScreen";
+import TerminalConsole from "@/components/TerminalConsole";
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -69,7 +73,10 @@ export default function RootLayout({
       className={`${inter.variable} ${firaCode.variable} h-full antialiased dark`}
     >
       <body className="min-h-full flex flex-col bg-background text-foreground selection:bg-cyber-blue selection:text-white">
+        <LoadingScreen />
         {children}
+        <TerminalConsole />
+        <Analytics />
       </body>
     </html>
   );
