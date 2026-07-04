@@ -16,9 +16,15 @@ export default function Contact() {
     
     // Read the access key from the environment variable
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
-    if (accessKey) {
-      formData.append("access_key", accessKey);
+    
+    if (!accessKey) {
+      alert("Configuration Error: The Web3Forms access key is missing! Please stop your terminal (Ctrl + C) and run 'npm run dev' again to load the new .env.local file.");
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 5000);
+      return;
     }
+    
+    formData.append("access_key", accessKey);
 
     try {
       const res = await fetch("https://api.web3forms.com/submit", {
