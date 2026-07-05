@@ -8,7 +8,7 @@ export default function About() {
     {
       category: "Languages",
       icon: <Code2 className="text-cyber-blue mb-2" size={28} />,
-      items: ["Python", "TypeScript", "Java", "C/C++", "JavaScript"],
+      items: ["JavaScript", "TypeScript", "Python", "Java", "C/C++"],
     },
     {
       category: "Frameworks",
@@ -18,27 +18,27 @@ export default function About() {
     {
       category: "Cloud",
       icon: <Cloud className="text-cyber-blue mb-2" size={28} />,
-      items: ["AWS (Lambda, API Gateway, S3, Cognito, Bedrock)", "AWS CDK", "Vercel", "Netlify"],
+      items: ["AWS (Lambda, S3, Bedrock)", "AWS CDK", "Vercel", "Netlify"],
     },
     {
       category: "DevOps",
       icon: <Terminal className="text-aws-orange mb-2" size={28} />,
-      items: ["Git", "GitHub", "Docker", "Jenkins", "Ansible"],
+      items: ["Git", "GitHub", "Docker"],
     },
     {
       category: "Databases",
       icon: <Database className="text-cyber-blue mb-2" size={28} />,
-      items: ["PostgreSQL", "DynamoDB", "MongoDB", "MySQL", "ChromaDB"],
+      items: ["PostgreSQL", "MongoDB", "MySQL", "ChromaDB", "DynamoDB"],
     },
     {
       category: "AI",
       icon: <BrainCircuit className="text-aws-orange mb-2" size={28} />,
-      items: ["RAG", "LangChain", "Groq", "Claude 3.5 Sonnet", "Amazon Nova Pro"],
+      items: ["RAG", "LangChain", "Groq"],
     },
     {
       category: "Security",
       icon: <Shield className="text-cyber-blue mb-2" size={28} />,
-      items: ["Wireshark", "Nmap", "Hashing", "Firewalls", "IDS"],
+      items: ["Wireshark", "Nmap", "Firewalls", "IDS"],
     },
   ];
 
@@ -71,7 +71,7 @@ export default function About() {
               <div className="absolute -bottom-10 -left-10 w-40 h-40 bg-aws-orange/5 rounded-full blur-3xl -z-10 group-hover:bg-aws-orange/10 transition-colors"></div>
               <h3 className="text-2xl font-semibold text-white mb-4">Who I Am</h3>
               <p className="text-gray-300 leading-relaxed">
-                I am a passionate <span className="text-cyber-blue font-semibold">Full-Stack Developer</span> and <span className="text-aws-orange font-semibold">Cloud & DevOps Enthusiast</span> currently pursuing my B.E. in Information Technology. 
+                I am a passionate <span className="text-cyber-blue font-semibold">Full-Stack Developer</span> and <span className="text-aws-orange font-semibold">Cloud & DevOps Enthusiast</span> currently pursuing my B.E. in Information Technology.
               </p>
               <p className="text-gray-300 leading-relaxed mt-4">
                 I specialize in building scalable web applications, optimizing cloud infrastructure, and leveraging AI/ML technologies to solve complex problems. With a strong foundation in both frontend aesthetics and backend architecture, I thrive in environments that challenge me to learn, innovate, and build highly efficient systems.
@@ -92,7 +92,7 @@ export default function About() {
                 <GraduationCap className="text-aws-orange" size={28} />
                 <h3 className="text-2xl font-semibold text-white">Education</h3>
               </div>
-              
+
               <div className="space-y-8 mt-4">
                 <div className="relative pl-5 border-l-2 border-white/10">
                   <div className="absolute w-3 h-3 bg-cyber-blue rounded-full -left-[7px] top-1.5 shadow-[0_0_10px_var(--cyber-blue)]"></div>
@@ -100,7 +100,7 @@ export default function About() {
                   <p className="text-gray-400 text-sm mt-1">A. P. Shah Institute of Technology</p>
                   <p className="text-cyber-blue font-mono text-sm mt-2 font-medium">CGPA: 9.66 (Current)</p>
                 </div>
-                
+
                 <div className="relative pl-5 border-l-2 border-white/10">
                   <div className="absolute w-3 h-3 bg-white/20 rounded-full -left-[7px] top-1.5"></div>
                   <h4 className="font-semibold text-gray-200 text-lg">HSC</h4>
@@ -125,7 +125,7 @@ export default function About() {
               <div className="absolute -bottom-2 left-0 w-full h-0.5 bg-gradient-to-r from-transparent via-aws-orange to-transparent opacity-50"></div>
             </h3>
           </div>
-          
+
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
             {skills.map((skill, index) => (
               <div

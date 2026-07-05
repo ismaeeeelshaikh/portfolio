@@ -5,9 +5,9 @@ import { Briefcase, Award, Medal } from "lucide-react";
 
 export default function Experience() {
   const achievements = [
+    "Elite NPTEL DBMS Certification (IIT Kharagpur)",
     "First Runner-up - Sparkathon APSIT",
     "Certificate of Achievement - GDG Solution Challenge",
-    "Elite NPTEL DBMS Certification (IIT Kharagpur)",
     "Certifications in IBM Agentic AI, Generative AI Mastermind, Python, and Cybersecurity",
   ];
 
@@ -38,18 +38,15 @@ export default function Experience() {
             <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
               <Briefcase className="text-cyber-blue" /> Professional Journey
             </h3>
-            
+
             <div className="relative border-l-2 border-white/10 pl-8 ml-3 space-y-12">
               <div className="relative">
                 {/* Timeline Dot */}
                 <div className="absolute w-4 h-4 bg-background border-2 border-aws-orange rounded-full -left-[41px] top-1.5 shadow-[0_0_10px_rgba(255,153,0,0.5)]"></div>
-                
+
                 <h4 className="text-xl font-bold text-white">Technical Co-Head</h4>
                 <p className="text-cyber-blue font-medium mb-3">DevOps Club APSIT</p>
-                <div className="inline-block px-3 py-1 bg-white/5 text-gray-400 text-xs font-mono rounded mb-4 border border-white/10">
-                  July 2023 - Present
-                </div>
-                
+
                 <ul className="space-y-2 text-gray-400 text-sm leading-relaxed">
                   <li className="flex items-start gap-2">
                     <span className="text-aws-orange/70 mt-1">-</span>
@@ -78,7 +75,7 @@ export default function Experience() {
             <h3 className="text-2xl font-bold text-white mb-8 flex items-center gap-3">
               <Award className="text-aws-orange" /> Recognitions
             </h3>
-            
+
             <div className="space-y-4">
               {achievements.map((achievement, index) => (
                 <div

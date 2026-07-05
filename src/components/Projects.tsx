@@ -2,40 +2,51 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ExternalLink, Code2, FolderGit2 } from "lucide-react";
+import { ExternalLink, FolderGit2 } from "lucide-react";
 
 const projects = [
   {
-    title: "Nyaya Mitra AI",
-    description:
-      "Serverless legal AI application short-listed for AI for Bharat ($100 AWS grant). Integrated Amazon Nova Pro for document summarization and legal drafting.",
-    tags: ["AWS CDK", "Lambda", "API Gateway", "DynamoDB", "Amazon Nova Pro"],
-    category: "Cloud/DevOps",
-    featured: true,
-  },
-  {
-    title: "Smart Campus Connect",
-    description:
-      "AI-powered RAG assistant processing the entire college website into ChromaDB for contextual responses. Uses conversational memory.",
-    tags: ["Python", "LangChain", "Groq", "PostgreSQL", "ChromaDB"],
-    category: "AI/ML",
-    featured: true,
-  },
-  {
-    title: "Nyaab Gifts",
+    title: "Nayaab Gifts",
     description:
       "Full-stack personalized e-commerce platform. Managed 15+ registered users securely with complete checkout flow.",
     tags: ["Next.js", "MongoDB", "Cloudinary", "Cashfree"],
     category: "Full-Stack",
     featured: false,
+    link: "https://nayaabgifts.me/",
+
+
+
   },
   {
     title: "DevOps Club Official Website",
     description:
-      "Architected frontend with real-time event registrations (60+ users). Established automated CI/CD pipelines ensuring zero downtime.",
+      "Architected frontend with real-time event registrations (60+ users managed up till now). Established automated CI/CD pipelines ensuring zero downtime.",
     tags: ["React", "Firebase", "CI/CD"],
     category: "Full-Stack",
     featured: false,
+    link: "https://devopsclub.apsit.edu.in/",
+
+
+  },
+  {
+    title: "Nyaya Mitra AI",
+    description:
+      "Serverless legal AI application. Integrated Amazon Nova Pro for document summarization and legal drafting.",
+    tags: ["AWS CDK", "Lambda", "API Gateway", "DynamoDB", "Bedrock"],
+    category: "Cloud/DevOps",
+    featured: true,
+    link: "https://d1r7thw3rznz88.cloudfront.net/",
+
+  },
+  {
+    title: "Smart Campus Connect",
+    description:
+      "AI-powered RAG assistant processing the entire college website information into ChromaDB for contextual responses. Uses conversational memory.",
+    tags: ["Python", "LangChain", "Groq", "PostgreSQL", "ChromaDB"],
+    category: "AI/ML",
+    featured: true,
+    link: "https://github.com/ismaeeeelshaikh/college-ai-assistant",
+
   },
 ];
 
@@ -62,18 +73,17 @@ export default function Projects() {
             <span className="text-cyber-blue">&lt;</span> Featured Projects <span className="text-cyber-blue">/&gt;</span>
           </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-cyber-blue to-aws-orange mx-auto rounded mb-8"></div>
-          
+
           {/* Filter Buttons */}
           <div className="flex flex-wrap justify-center gap-3">
             {categories.map((category) => (
               <button
                 key={category}
                 onClick={() => setFilter(category)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${
-                  filter === category
-                    ? "bg-cyber-blue text-white shadow-[0_0_15px_rgba(245,158,11,0.4)]"
-                    : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5"
-                }`}
+                className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${filter === category
+                  ? "bg-cyber-blue text-white shadow-[0_0_15px_rgba(245,158,11,0.4)]"
+                  : "bg-white/5 text-gray-400 hover:bg-white/10 hover:text-white border border-white/5"
+                  }`}
               >
                 {category}
               </button>
@@ -91,25 +101,28 @@ export default function Projects() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }}
                 transition={{ duration: 0.3 }}
-                className={`glass-card p-8 rounded-xl border transition-all duration-300 group relative overflow-hidden flex flex-col h-full ${
-                  project.featured
-                    ? "border-cyber-blue/30 hover:border-cyber-blue hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]"
-                    : "border-white/5 hover:border-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]"
-                }`}
+                className={`glass-card p-8 rounded-xl border transition-all duration-300 group relative overflow-hidden flex flex-col h-full ${project.featured
+                  ? "border-cyber-blue/30 hover:border-cyber-blue hover:shadow-[0_0_20px_rgba(245,158,11,0.15)]"
+                  : "border-white/5 hover:border-white/20 hover:shadow-[0_0_15px_rgba(255,255,255,0.05)]"
+                  }`}
               >
                 {project.featured && (
                   <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyber-blue to-transparent"></div>
                 )}
-                
+
                 <div className="flex justify-between items-start mb-6">
                   <FolderGit2 className={project.featured ? "text-cyber-blue" : "text-gray-400"} size={36} />
                   <div className="flex gap-4">
-                    <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                      <Code2 size={20} />
-                    </a>
-                    <a href="#" className="text-gray-400 hover:text-cyber-blue transition-colors">
-                      <ExternalLink size={20} />
-                    </a>
+                    {project.link && (
+                      <a
+                        href={project.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-gray-400 hover:text-cyber-blue transition-colors"
+                      >
+                        <ExternalLink size={20} />
+                      </a>
+                    )}
                   </div>
                 </div>
 
@@ -119,7 +132,7 @@ export default function Projects() {
                     {project.title}
                   </h3>
                 </div>
-                
+
                 <p className="text-gray-400 text-sm leading-relaxed mb-6 flex-grow">
                   {project.description}
                 </p>
